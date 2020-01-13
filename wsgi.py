@@ -23,9 +23,9 @@ dbName = "sampledb"
 #dbServerName = os.getenv('MYSQL_HOST')
 #dbUser = os.getenv('MYSQL_USER')
 #dbPassword = os.getenv('MYSQL_PASSWORD')
-print(dbServerName)
-print(dbUser)
-print(dbPassword)
+#print(dbServerName)
+#print(dbUser)
+#print(dbPassword)
 charSet = "utf8mb4"
 cusrorType = pymysql.cursors.DictCursor
 connectionObject = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,
