@@ -15,10 +15,13 @@ GOOGLE_SPEECH_API_KEY = None
 #app.config["MYSQL_PASSWORD"] =db['mysql_password']
 #app.config["MYSQL_DB"] =db['mysql_db']
 #mysql=MySQL(app)
-dbServerName = "129.146.85.135"
-dbUser = "xxuser"
-dbPassword = "welcome1"
+#dbServerName = "129.146.85.135"
+#dbUser = "xxuser"
+#dbPassword = "welcome1"
 dbName = "sampledb"
+dbServerName = os.getenv('MYSQL_HOST')
+dbUser = os.getenv('MYSQL_USER')
+dbPassword = os.getenv('MYSQL_PASSWORD')
 charSet = "utf8mb4"
 cusrorType = pymysql.cursors.DictCursor
 connectionObject = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,
