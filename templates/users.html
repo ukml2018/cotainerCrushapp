@@ -1,0 +1,87 @@
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.locals-list>img {
+    width: 400px;
+}
+div {
+    text-align:center;
+}
+</style>
+<head>
+    <div class="main">
+<header role="banner">
+    <nav role="navigation">
+      <h2><a href="#">Red-Hawks</a></h2>
+      <ul class="nav-ul">
+        |
+        <a href="#">Home</a>
+        |
+        <a href="#"> About Us</a>
+        |
+        <a href="#"> Technologies</a>
+        |
+        <a href="#"> Projects </a>
+        |
+        <a href="#"> Contacts</a>
+        |
+        <a href="#"> Sign-in</a>
+        |
+      </ul>
+    </nav>
+  </header>
+<hr>
+  <div class="locals-list">
+<img src="https://i.gifer.com/TFq1.gif" height="120px" width="600px" data-pin-nopin="true">
+  </div>
+  <hr>
+
+</head>
+<body>
+    <div class="row">
+    {% for user in userDetails %}
+
+  <div class="column women">
+    <div class="content">
+      <h4>{{user["descp"]}} </h4>
+      <img src={{user["image"]}} alt="Mountains" width="200" height="140" broder="1">
+        <font size="2"><p >Size: <b>{{user["size"]}}</b>   Color: <b>{{user["color"]}}  </b> <br> Price: <strike>{{user["rprice"]}}</strike> <b>{{user["dis"]}}</b>  </p></font>
+      <form><input type='button' value='Order'>
+    </div>
+  </div>
+
+    {% endfor %}
+</div>
+</body>
+</html>
