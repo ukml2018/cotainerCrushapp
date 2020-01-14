@@ -65,7 +65,7 @@ def about():
 def all():
     #cur = mysql.connection.cursor()
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number ";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number ";
     resultValue=cur.execute(query_string )
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -84,7 +84,7 @@ def Reflex_Women():
     input = '%'+'Reflex Women'+ '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue=cur.execute(query_string ,(input,))
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -97,7 +97,7 @@ def Reflex_Men():
     input = '%'+'Reflex Men'+ '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue=cur.execute(query_string ,(input,))
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -109,7 +109,7 @@ def MLANM_Mens():
     input = '%'+'MLANM Mens'+ '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue=cur.execute(query_string ,(input,))
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -121,7 +121,7 @@ def Gildan_Men():
     input = '%'+'Gildan Men'+ '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue=cur.execute(query_string ,(input,))
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -133,7 +133,7 @@ def IWOLLENCE_Womens():
     input = '%'+'IWOLLENCE Womens'+ '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue=cur.execute(query_string ,(input,))
     if resultValue>0:
         userDetails =cur.fetchall()
@@ -147,7 +147,7 @@ def Disposable():
     input = '%' + 'Disposable' + '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue = cur.execute(query_string, (input,))
     if resultValue > 0:
         userDetails = cur.fetchall()
@@ -160,7 +160,7 @@ def PAUL_JONES_Men():
     input = '%' + 'PAUL JONES Men' + '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue = cur.execute(query_string, (input,))
     if resultValue > 0:
         userDetails = cur.fetchall()
@@ -173,7 +173,7 @@ def MUSHARE_Women():
     input = '%' + 'MUSHARE Women' + '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue = cur.execute(query_string, (input,))
     if resultValue > 0:
         userDetails = cur.fetchall()
@@ -185,7 +185,7 @@ def Kenneth_Cole():
     input = '%' + 'Kenneth Cole' + '%'
     print(input)
     cur = connectionObject.cursor()
-    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
     resultValue = cur.execute(query_string, (input,))
     if resultValue > 0:
         userDetails = cur.fetchall()
