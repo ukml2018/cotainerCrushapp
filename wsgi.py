@@ -20,12 +20,6 @@ dbServerName = "172.30.132.124"
 dbUser = "xxuser"
 dbPassword = "welcome1"
 dbName = "sampledb"
-#dbServerName = os.getenv('MYSQL_HOST')
-#dbUser = os.getenv('MYSQL_USER')
-#dbPassword = os.getenv('MYSQL_PASSWORD')
-#print(dbServerName)
-#print(dbUser)
-#print(dbPassword)
 charSet = "utf8mb4"
 cusrorType = pymysql.cursors.DictCursor
 connectionObject = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,
@@ -44,7 +38,7 @@ def find():
             #email = userDetails["email"]
         #cur = mysql.connection.cursor()
         cur = connectionObject.cursor()
-        query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from xxibm_product_pricing pr, xxibm_product_sku sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+        query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
         resultValue = cur.execute(query_string,(input,))
         if resultValue > 0:
             print('1')
@@ -55,6 +49,15 @@ def find():
         cur.close()
         #return 'Success'
     return render_template('index1.html')
+#@app.route('/users')
+@application.route('/users')
+def contact():
+    return render_template('contact.html')
+
+#@app.route('/mic', methods=["GET", "POST"] )
+@application.route('/mic', methods=["GET", "POST"] )
+def about():
+    return render_template('about.html')
 
 
 #@app.route('/users')

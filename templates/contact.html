@@ -1,5 +1,63 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
 * {
   box-sizing: border-box;
 }
@@ -38,7 +96,6 @@ img:hover {
 div {
     text-align:center;
 }
-<style>
 body {
   font-family: "Lato", sans-serif;
 }
@@ -108,27 +165,42 @@ body {
 <body>
 <div class="sidenav">
     <img src="https://static-s.aa-cdn.net/img/gp/20600011634833/PPBuujDSaDukGHIuMMinFi39_8IggBfftmZ726Sd_glO39e-G10i-axbMNam1OgF0yo=s300?v=1">
-  <a href="">Home</a>
-  <a href="about">About</a>
+  <a href="/">Home</a>
+  <a href="about">About US</a>
   <a href="contact">Contact</a>
 </div>
+<h2>Contact</h2>
 
-<div class="main">
+<br>
 
-</div>
-    <div class="row">
-    {% for user in userDetails %}
+<div class="row">
+  <div class="column">
+    <div class="card">
 
-  <div class="column women">
-    <div class="content">
-      <h5>{{user["descp"]}} </h5>
-      <img src={{user["image"]}} alt="Mountains" width="200" height="130" broder="1">
-        <font size="2"><p >Size: <b>{{user["size"]}}</b>   Color: <b>{{user["color"]}}  </b> <br> Price: <strike>{{user["rprice"]}}</strike> <b>{{user["dis"]}}</b>  </p></font>
-      <form><input type='button' value='Order'>
+      <div class="container">
+        <h2>Corporate  office-1  </h2>
+        <p class="title">IBM BCS Building</p>
+        <p>EP Block, Sector V, Bidhan Nagar, Kolkata, West Bengal 700091</p>
+        <p>XXXX@in.ibm.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
     </div>
   </div>
 
-    {% endfor %}
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <h2>Operating  office-1  </h2>
+        <p class="title">IDLF IT Park</p>
+        <p>Action Area I, Newtown, Kolkata, West Bengal 700156</p>
+        <p>XXXX@in.ibm.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
 </div>
+
 </body>
 </html>
