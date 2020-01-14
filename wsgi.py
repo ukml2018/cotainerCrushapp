@@ -38,7 +38,7 @@ def find():
             #email = userDetails["email"]
         #cur = mysql.connection.cursor()
         cur = connectionObject.cursor()
-        query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+        query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU sku where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
         resultValue = cur.execute(query_string,(input,))
         if resultValue > 0:
             print('1')
