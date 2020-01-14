@@ -49,23 +49,24 @@ def find():
         cur.close()
         #return 'Success'
     return render_template('index1.html')
-#@app.route('/users')
-@application.route('/users')
+#@app.route('/contact', )
+@application.route('/contact', )
 def contact():
     return render_template('contact.html')
 
-#@app.route('/mic', methods=["GET", "POST"] )
-@application.route('/mic', methods=["GET", "POST"] )
+#@app.route('/about', )
+@application.route('/about', )
 def about():
     return render_template('about.html')
 
 
-#@app.route('/users')
-@application.route('/users')
-def users():
+#@app.route('/all')
+@application.route('/all')
+def all():
     #cur = mysql.connection.cursor()
     cur = connectionObject.cursor()
-    resultValue=cur.execute("Select * from  users")
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number ";
+    resultValue=cur.execute(query_string )
     if resultValue>0:
         userDetails =cur.fetchall()
         return render_template('users.html',userDetails=userDetails)
@@ -76,8 +77,119 @@ def users():
 #    if resultValue>0:
 #        userDetails =cur.fetchall()
 #        return render_template('users.html',userDetails=userDetails)
+#@app.route('/Reflex Women')
+@application.route('/Reflex Women')
+def Reflex_Women():
+    #cur = mysql.connection.cursor()
+    input = '%'+'Reflex Women'+ '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue=cur.execute(query_string ,(input,))
+    if resultValue>0:
+        userDetails =cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
+
+#@app.route('/Reflex Men')
+@application.route('/Reflex Men')
+def Reflex_Men():
+    #cur = mysql.connection.cursor()
+    input = '%'+'Reflex Men'+ '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue=cur.execute(query_string ,(input,))
+    if resultValue>0:
+        userDetails =cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
+#@app.route('/MLANM Mens')
+@application.route('/MLANM Mens')
+def MLANM_Mens():
+    #cur = mysql.connection.cursor()
+    input = '%'+'MLANM Mens'+ '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue=cur.execute(query_string ,(input,))
+    if resultValue>0:
+        userDetails =cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
+#@app.route('/Gildan Men')
+@application.route('/Gildan Men')
+def Gildan_Men():
+    #cur = mysql.connection.cursor()
+    input = '%'+'Gildan Men'+ '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue=cur.execute(query_string ,(input,))
+    if resultValue>0:
+        userDetails =cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
+#@app.route('/IWOLLENCE Womens')
+@application.route('/IWOLLENCE Womens')
+def IWOLLENCE_Womens():
+    #cur = mysql.connection.cursor()
+    input = '%'+'IWOLLENCE Womens'+ '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue=cur.execute(query_string ,(input,))
+    if resultValue>0:
+        userDetails =cur.fetchall()
+        return render_template('users.html',userDetails=userDetails)
 
 
+#@app.route('/Disposable')
+@application.route('/Disposable')
+def Disposable():
+    # cur = mysql.connection.cursor()
+    input = '%' + 'Disposable' + '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue = cur.execute(query_string, (input,))
+    if resultValue > 0:
+        userDetails = cur.fetchall()
+        return render_template('users.html', userDetails=userDetails)
+
+#@app.route('/PAUL JONES Men')
+@application.route('/PAUL JONES Men')
+def PAUL_JONES_Men():
+    # cur = mysql.connection.cursor()
+    input = '%' + 'PAUL JONES Men' + '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue = cur.execute(query_string, (input,))
+    if resultValue > 0:
+        userDetails = cur.fetchall()
+        return render_template('users.html', userDetails=userDetails)
+
+#@app.route('/MUSHARE Women')
+@application.route('/MUSHARE Women')
+def MUSHARE_Women():
+    # cur = mysql.connection.cursor()
+    input = '%' + 'MUSHARE Women' + '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue = cur.execute(query_string, (input,))
+    if resultValue > 0:
+        userDetails = cur.fetchall()
+        return render_template('users.html', userDetails=userDetails)
+#@app.route('/Kenneth Cole')
+@application.route('/Kenneth Cole')
+def Kenneth_Cole():
+    # cur = mysql.connection.cursor()
+    input = '%' + 'Kenneth Cole' + '%'
+    print(input)
+    cur = connectionObject.cursor()
+    query_string = "select pr.item_number itemid, sku.description descp, pr.list_price rprice, pr.price_effective_date edate, (pr.list_price -  IFNULL(pr.discount,0)) dis, sku.SKU_ATTRIBUTE_VALUE1 size, sku.SKU_ATTRIBUTE_VALUE2 color, concat('http://getproductimage-red-hawk.gamification-d3c0cb24e2b77f6869027abe3de4bca3-0001.sng01.containers.appdomain.cloud/get-image-for-item-id/',pr.item_number)  image from XXIBM_PRODUCT_PRICING pr, XXIBM_PRODUCT_SKU SKU where pr.item_number = sku.item_number and lower(sku.description) like  lower(%s)";
+    resultValue = cur.execute(query_string, (input,))
+    if resultValue > 0:
+        userDetails = cur.fetchall()
+        return render_template('users.html', userDetails=userDetails)
 
 #@app.route('/mic', methods=["GET", "POST"] )
 @application.route('/mic', methods=["GET", "POST"] )
